@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-.body{
+body{
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .heading{
-   @apply text-center text-3xl text-white font-bold
+   @apply text-center text-3xl md:text-5xl  text-white font-bold;
 }
 
 .label{
@@ -13,13 +13,76 @@
 }
 
 .input{
-    @apply  mt-2 w-full bg-amber-100 rounded-2xl p-2  focus:bg-blue-200;
+    @apply  mt-2 w-full bg-gray-100 rounded-2xl p-2  focus:bg-gray-200 focus:outline focus:outline-1 focus:outline-gray-300;
 }
 
 .btn{
-@apply w-full bg-blue-700 rounded-2xl p-2 outline-1 hover:bg-transparent hover:outline-1 hover:outline-blue-400 text-white hover:text-black transition duration-300 ease-in;
+@apply w-full bg-gray-700 rounded-2xl p-2 
+                outline outline-1 hover:bg-transparent
+                hover:outline-1 hover:outline-gray-400 
+                text-white hover:text-black 
+                transition duration-300 ease-in;
 }
 
 .btn-green{
-@apply w-full bg-green-700 rounded-2xl p-2 outline-1 hover:bg-transparent hover:outline-1 hover:outline-green-400 text-white hover:text-black transition duration-300 ease-in;
+@apply w-full bg-green-700 rounded-2xl p-2 
+                outline outline-1 hover:bg-transparent 
+                hover:outline-1 hover:outline-green-400 
+                text-white hover:text-black 
+                transition duration-300 ease-in;
 }
+
+.btn-edit {
+  @apply  bg-gray-600 p-2 text-white text-center
+                outline outline-1 outline-transparent
+                hover:bg-transparent hover:outline-gray-400 hover:text-black
+                transition duration-300 ease-in;
+}
+
+.btn-delete {
+  @apply  bg-red-600 p-2 text-white text-center
+                outline outline-1 outline-transparent
+                hover:bg-transparent hover:outline-red-400 hover:text-black
+                transition duration-300 ease-in;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+/* when overlay is active */
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+.popUp{
+    background-color: #fff;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    padding: 10px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.popUp-close
+{
+visibility:visible;
+}
+
